@@ -28,6 +28,13 @@ body {
 	margin: 0;
 }
 
+.unselectable {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 body>* {
 	position: relative;
 }
@@ -72,7 +79,7 @@ h1 {
 	border-radius: 0.5rem;
 	overflow: hidden;
 }
-.countdown .counter::before, .countdown .counter::after {
+.countdown .counter::before, .countdown .counter::after, .countdown .moving-half::before, .countdown .moving-half::after {
 	content: "";
 	border-radius: 1rem;
 	z-index: 11;
@@ -82,11 +89,11 @@ h1 {
 	height: 0.7rem;
 	background-color: var(--darkest-blue);
 }
-.countdown .counter::before {
+.countdown .counter::before, .countdown .moving-half::before {
 	left: 0;
 	transform: translate(-50%, -50%);
 }
-.countdown .counter::after {
+.countdown .counter::after, .countdown .moving-half::after {
 	right: 0;
 	transform: translate(50%, -50%);
 }
@@ -101,17 +108,13 @@ h1 {
 	border-radius: inherit;
 }
 
-.countdown .counter-half.darkened {
+.countdown .top-half {
+	clip: rect(0, var(--counter-width), calc(var(--counter-height) / 2), 0);
 	filter: brightness(85%);
 }
 
-.countdown .top-half {
-	clip: rect(0, var(--counter-width), calc(var(--counter-height) / 2), 0);
-}
-
 .countdown .moving-half {
-	z-index: 10;
-	display: none;
+	z-index: 15;
 }
 
 .countdown .bottom-half {
