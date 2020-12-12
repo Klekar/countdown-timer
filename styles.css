@@ -171,7 +171,11 @@ footer {
 	color: var(--grayish-blue);
 }
 .attribution a {
+	transition: color 0.2s ease-in-out;
 	color: var(--grayish-blue);
+}
+.attribution a:hover {
+	color: var(--soft-red);
 }
 
 
