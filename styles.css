@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+:root {
+	--grayish-blue: hsl(237, 18%, 59%);
+	--soft-red: hsl(345, 95%, 68%);
+	--white :hsl(0, 0%, 100%);
+	--dark-blue: hsl(236, 21%, 26%);
+	--darker-blue: hsl(235, 16%, 14%);
+	--darkest-blue: hsl(234, 17%, 12%);
+	font-size: 14px;
+	font-family: 'Red Hat Text', sans-serif;
+	font-weight: 700;
+}
+
+html {
+	margin: 0;
+	text-align: center;
+	height: 100%;
+	background-color: var(--darker-blue);
+	background-image: url(./images/bg-stars.svg);
+	background-image: url(./images/bg-stars.svg), linear-gradient(var(--darker-blue), #211A29);
+}
+
+body {
+	margin: 0;
+}
+
+body>* {
+	position: relative;
+}
+
+h1 {
+	top: 10rem;
+	color: var(--white);
+	font-size: 1.2em;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+}
+
+.countdown {
+	top: 18rem;
+}
+
+.countdown div {
+	display: inline-block;
+}
+
+.countdown .countdown-unit {
+	margin: 0 1rem;
+}
+
+.countdown .countdown-unit > * {
+	display: block;
+}
+
+.countdown .counter {
+	--counter-width: 8rem;
+	--counter-height: 8rem;
+	color: var(--soft-red);
+	width: var(--counter-width);
+	height: var(--counter-height);
+	position: relative;
+	font-size: 5rem;
+	line-height: 8rem;
+	box-shadow: 0px 0.4rem 0.1rem 0 var(--darkest-blue);
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+.countdown .counter::before, .countdown .counter::after {
+	content: "";
+	border-radius: 1rem;
+	z-index: 11;
+	position: absolute;
+	top: 50%;
+	width: 0.7rem;
+	height: 0.7rem;
+	background-color: var(--darkest-blue);
+}
+.countdown .counter::before {
+	left: 0;
+	transform: translate(-50%, -50%);
+}
+.countdown .counter::after {
+	right: 0;
+	transform: translate(50%, -50%);
+}
+
+.countdown .counter-half {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--dark-blue);
+	border-radius: inherit;
+}
+
+.countdown .counter-half.darkened {
+	filter: brightness(85%);
+}
+
+.countdown .top-half {
+	clip: rect(0, var(--counter-width), calc(var(--counter-height) / 2), 0);
+}
+
+.countdown .moving-half {
+	z-index: 10;
+	display: none;
+}
+
+.countdown .bottom-half {
+	clip: rect(calc(var(--counter-height) / 2), var(--counter-width), var(--counter-height), 0);
+}
+
+.countdown .halfing-line {
+	width: 100%;
+	height: 
+}
+
+.countdown span {
+	margin-top: 2rem;
+	color: var(--grayish-blue);
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 0.8em;
+}
+
+footer {
+	background-image: url(./images/pattern-hills.svg);
+	background-repeat-y: no-repeat;
+	background-position-y: bottom;
+	background-position-x: 80%;
+	background-size: cover;
+	width: 100%;
+	height: 26vh;
+	bottom: 0;
+	position: absolute;
+	vertical-align: middle;
+}
+
+.socials {
+	font-size: 24px;
+	color: var(--grayish-blue);
+	text-align: center;
+	margin-top: 14vh;
+	/*rrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee*/
+}
+
+.socials a{
+	margin: 0 0.5em 0 0.5em;
+	transition: color 0.2s ease-in-out;
+}
+
+.socials a:hover {
+	color: var(--soft-red);
+}
+
+.attribution {
+	position: absolute;
+	bottom: 0;
+	font-size: 11px;
+	text-align: center;
+	width: 100%;
+	color: var(--grayish-blue);
+}
+.attribution a {
+	color: var(--grayish-blue);
+}

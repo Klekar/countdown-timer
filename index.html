@@ -7,56 +7,54 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Launch countdown timer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Lobster" rel="stylesheet">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="https://kit.fontawesome.com/c67a9eb928.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <h1>We're launching soon</h1>
 
-  <div>
-    <div class="countdown-days">
-      <div>
-        <div class="top-half"></div>
-        <div class="moving-half"></div>
-        <div class="bottom-half"></div>
+  <div class="countdown">
+    <div class="countdown-days countdown-unit">
+      <div class="counter">
+        <div class="top-half counter-half darkened">00</div>
+        <div class="moving-half counter-half darkened"></div>
+        <div class="bottom-half counter-half">00</div>
       </div>
       <span>Days</span>
     </div>
-    <div class="countdown-hours">
-      <div>
-        <div class="top-half"></div>
-        <div class="moving-half"></div>
-        <div class="bottom-half"></div>
+    <div class="countdown-hours countdown-unit">
+      <div class="counter">
+        <div class="top-half counter-half darkened">00</div>
+        <div class="moving-half counter-half darkened"></div>
+        <div class="bottom-half counter-half">00</div>
       </div>
       <span>Hours</span>
     </div>
-    <div class="countdown-minutes">
-      <div>
-        <div class="top-half"></div>
-        <div class="moving-half"></div>
-        <div class="bottom-half"></div>
+    <div class="countdown-minutes countdown-unit">
+      <div class="counter">
+        <div class="top-half counter-half darkened">00</div>
+        <div class="moving-half counter-half darkened"></div>
+        <div class="bottom-half counter-half">00</div>
       </div>
       <span>Minutes</span>
     </div>
-    <div class="countdown-seconds">
-      <div>
-        <div class="top-half"></div>
-        <div class="moving-half"></div>
-        <div class="bottom-half"></div>
+    <div class="countdown-seconds countdown-unit">
+      <div class="counter">
+        <div class="top-half counter-half darkened">00</div>
+        <div class="moving-half counter-half darkened"></div>
+        <div class="bottom-half counter-half">00</div>
       </div>
       <span>Seconds</span>
     </div>
   </div>
   <footer>
-    <div>
-      <a><span class="icon facebook-icon"></span></a>
-      <a><span class="icon pinterest-icon"></span></a>
-      <a><span class="icon instagram-icon"></span></a>
+    <div class="socials">
+      <a><span class="icon facebook-icon"><i class="fab fa-facebook-square"></i></span></a>
+      <a><span class="icon pinterest-icon"><i class="fab fa-pinterest"></i></span></a>
+      <a><span class="icon instagram-icon"><i class="fab fa-instagram"></i></span></a>
     </div>
   </footer>
   <div class="attribution">
