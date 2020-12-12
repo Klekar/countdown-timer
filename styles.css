@@ -16,12 +16,15 @@ html {
 	margin: 0;
 	text-align: center;
 	height: 100%;
+	overflow: hidden;
 	background-color: var(--darker-blue);
 	background-image: url(./images/bg-stars.svg);
-	background-image: url(./images/bg-stars.svg), linear-gradient(var(--darker-blue), #211A29);
+	background-image: url(./images/bg-stars.svg), linear-gradient(var(--darkest-blue), var(--darker-blue));
 }
 
 body {
+	height: 100%;
+	overflow: hidden;
 	margin: 0;
 }
 
@@ -30,15 +33,18 @@ body>* {
 }
 
 h1 {
-	top: 10rem;
+	top: 20vh;
 	color: var(--white);
-	font-size: 1.2em;
+	font-size: 18px;
 	letter-spacing: 0.3em;
 	text-transform: uppercase;
 }
 
 .countdown {
-	top: 18rem;
+	top: 30vh;
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 .countdown div {
@@ -118,7 +124,7 @@ h1 {
 }
 
 .countdown span {
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 	color: var(--grayish-blue);
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
@@ -128,7 +134,7 @@ h1 {
 footer {
 	background-image: url(./images/pattern-hills.svg);
 	background-repeat-y: no-repeat;
-	background-position-y: bottom;
+	background-position-y: top;
 	background-position-x: 80%;
 	background-size: cover;
 	width: 100%;
@@ -139,11 +145,12 @@ footer {
 }
 
 .socials {
-	font-size: 24px;
+	font-size: 28px;
 	color: var(--grayish-blue);
 	text-align: center;
-	margin-top: 14vh;
-	/*rrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee*/
+	bottom: 5vh;
+	position: absolute;
+	width: 100%;
 }
 
 .socials a{
@@ -166,3 +173,23 @@ footer {
 .attribution a {
 	color: var(--grayish-blue);
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	:root {
+		font-size: 8px;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
