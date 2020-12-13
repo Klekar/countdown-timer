@@ -2,20 +2,24 @@
 
 var countdownTime = new Date(new Date().getFullYear(), 11, 24);
 
-var seconds;
+var seconds, x;
 
 var customBounce = CustomEase.create("customBounce", "M0,0 C0.152,0.18 0.214,0.28 0.316,0.54 0.378,0.7 0.43,0.963 0.438,1 0.446,0.985 0.49,0.816 0.648,0.736 0.728,0.696 0.798,0.729 0.836,0.744 0.93,0.78 1,1 1,1")
 
 updateCounter();
+setupInterval();
 
-var x = setInterval(function() {
+function setupInterval() {
+	x = setInterval(function() {
 
-	updateCounterUnit("seconds", --seconds);
+		updateCounterUnit("seconds", --seconds);
 
-	if (seconds <= -1) {
-		updateCounter();
-	}
-}, 1000);
+		if (seconds <= -1) {
+			updateCounter();
+		}
+	}, 1000);
+}
+
 
 function updateCounter() {
 	var difference = countdownTime.getTime() - Date.now();
@@ -85,3 +89,13 @@ function updateCounterUnit(unit, value) {
 		bottomHalf.style.filter = "brightness(100%)";
 	}
 }
+
+document.addEventListener("visibilitychange", event => {
+	if (document.visibilityState == "visible") {
+		setupInterval();
+		updateCounter();
+	}
+	else {
+		clearInterval(x);
+	}
+});
