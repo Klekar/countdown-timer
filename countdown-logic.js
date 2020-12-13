@@ -6,10 +6,6 @@ var seconds;
 
 var customBounce = CustomEase.create("customBounce", "M0,0 C0.152,0.18 0.214,0.28 0.316,0.54 0.378,0.7 0.43,0.963 0.438,1 0.446,0.985 0.49,0.816 0.648,0.736 0.728,0.696 0.798,0.729 0.836,0.744 0.93,0.78 1,1 1,1")
 
-
-var testVar = 61;
-var errorState = false;
-
 updateCounter();
 
 var x = setInterval(function() {
@@ -27,15 +23,6 @@ function updateCounter() {
 	var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 	seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-	if (errorState) {
-		console.log("update after error, ts: " + Date.now() + ", seconds: " + seconds);
-	}
-	if (minutes == testVar) {
-		console.log("same minute 2 times in a row, ts: " + Date.now() + ", seconds: " + seconds);
-		errorState = true;
-	}
-	testVar = minutes;
 
 	updateCounterUnit("seconds", seconds);
 	updateCounterUnit("minutes", minutes);
