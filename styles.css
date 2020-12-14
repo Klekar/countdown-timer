@@ -123,11 +123,6 @@ h1 {
 	clip: rect(calc(var(--counter-height) / 2), var(--counter-width), var(--counter-height), 0);
 }
 
-.countdown .halfing-line {
-	width: 100%;
-	height: 
-}
-
 .countdown span {
 	margin-top: 1.5rem;
 	color: var(--grayish-blue);
@@ -184,25 +179,8 @@ footer {
 }
 
 
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 	:root {
 		font-size: 8px;
 	}
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }
