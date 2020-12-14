@@ -1,4 +1,15 @@
-# Frontend Mentor - Launch countdown timer
+# Launch countdown timer
+
+## Intro
+
+Thans for checking out my solution to this challange. **Any feedback is welcome.**
+
+## My solution specificities
+
+- My solution counts down to christmas rather than starting at 14 days. If it's already past christmas in current year, it's gonna start 14 days countdown since loading the page. If it's 100 or more days to christmas in current year, it's gonna cut the first digit of days.
+- I made the counter boxes a bit smaller but it can be changed by changing `--counter-width` property of `.countdown .counter`. (10rem seems fine for the design)
+
+# Frontend Mentor - Launch countdown timer  (original challange README.md)
 
 ![Design preview for the Launch countdown timer coding challenge](./design/desktop-preview.jpg)
 
