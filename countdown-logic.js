@@ -1,13 +1,18 @@
 'use strict';
 
 var countdownTime = new Date(new Date().getFullYear(), 11, 24);
+if (countdownTime.getTime() < Date.now() - 86400000) { //if it's after 24.12. this year, set up 14 days countdown
+	countdownTime.setTime(1209600000);
+}
 var x = null;
 var seconds;
 
 var customBounce = CustomEase.create("customBounce", "M0,0 C0.152,0.18 0.214,0.28 0.316,0.54 0.378,0.7 0.43,0.963 0.438,1 0.446,0.985 0.49,0.816 0.648,0.736 0.728,0.696 0.798,0.729 0.836,0.744 0.93,0.78 1,1 1,1")
 
-updateCounter();
+document.addEventListener("visibilitychange", handleVisibilityChange);
+
 setupInterval();
+updateCounter();
 
 function setupInterval() {
 	if (x === null) {
@@ -37,6 +42,12 @@ function updateCounter() {
 
 	if (difference <= 0) {
 		clearInterval(x);
+		document.removeEventListener("visibilitychange", handleVisibilityChange);
+
+		updateCounterUnit("seconds", 0);
+		updateCounterUnit("minutes", 0);
+		updateCounterUnit("hours", 0);
+		updateCounterUnit("days", 0);
 	}
 }
 
@@ -92,7 +103,7 @@ function updateCounterUnit(unit, value) {
 	}
 }
 
-document.addEventListener("visibilitychange", event => {
+function handleVisibilityChange() {
 	if (document.visibilityState == "visible") {
 		setupInterval();
 		updateCounter();
@@ -101,4 +112,4 @@ document.addEventListener("visibilitychange", event => {
 		clearInterval(x);
 		x = null;
 	}
-});
+}

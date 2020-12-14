@@ -52,6 +52,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	flex-wrap: nowrap;
+	z-index: 1;
 }
 
 .countdown div {
@@ -68,13 +69,13 @@ h1 {
 
 .countdown .counter {
 	--counter-width: 8rem;
-	--counter-height: 8rem;
+	--counter-height: var(--counter-width);
 	color: var(--soft-red);
 	width: var(--counter-width);
 	height: var(--counter-height);
 	position: relative;
 	font-size: 5rem;
-	line-height: 8rem;
+	line-height: var(--counter-height);
 	box-shadow: 0px 0.4rem 0.1rem 0 var(--darkest-blue);
 	border-radius: 0.5rem;
 	overflow: hidden;
@@ -131,8 +132,8 @@ h1 {
 	margin-top: 1.5rem;
 	color: var(--grayish-blue);
 	text-transform: uppercase;
-	letter-spacing: 0.2em;
-	font-size: 0.8em;
+	letter-spacing: 0.4em;
+	font-size: 0.9em;
 }
 
 footer {
