@@ -11,19 +11,26 @@ var customBounce = CustomEase.create("customBounce", "M0,0 C0.152,0.18 0.214,0.2
 
 document.addEventListener("visibilitychange", handleVisibilityChange);
 
-setupInterval();
+startTimeout();
 updateCounter();
 
-function setupInterval() {
+function startTimeout() {
+	var interval = 1000;
+	var expectedTime = Date.now() + interval;
+
 	if (x === null) {
-		x = setInterval(function() {
+		x = setTimeout(timerStep, interval);
+	}
+	
+	function timerStep() {
+		updateCounterUnit("seconds", --seconds);
 
-			updateCounterUnit("seconds", --seconds);
-
-			if (seconds <= -1) {
-				updateCounter();
-			}
-		}, 1000);
+		if (seconds <= -1) {
+			updateCounter();
+		}
+		var error = Date.now() - expectedTime;
+		expectedTime += interval;
+		x = setTimeout(timerStep, Math.max(0, interval - error))
 	}
 }
 
@@ -71,7 +78,7 @@ function updateCounterUnit(unit, value) {
 		filter: "brightness(20%)"
 	}, {
 		filter: "brightness(85%)"
-	})
+	});
 	gsap.fromTo(movingE, {
 		filter: "brightness(85%)"
 	}, {
@@ -105,7 +112,7 @@ function updateCounterUnit(unit, value) {
 
 function handleVisibilityChange() {
 	if (document.visibilityState == "visible") {
-		setupInterval();
+		startTimeout();
 		updateCounter();
 	}
 	else {
