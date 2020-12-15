@@ -23,6 +23,9 @@ function startTimeout() {
 	}
 	
 	function timerStep() {
+		if (x === null) {
+			return;
+		}
 		updateCounterUnit("seconds", --seconds);
 
 		if (seconds <= -1) {
@@ -112,11 +115,11 @@ function updateCounterUnit(unit, value) {
 
 function handleVisibilityChange() {
 	if (document.visibilityState == "visible") {
-		startTimeout();
 		updateCounter();
+		startTimeout();
 	}
 	else {
-		clearInterval(x);
+		clearTimeout(x);
 		x = null;
 	}
 }
